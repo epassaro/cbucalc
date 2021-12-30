@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora CBU</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/material-outlined/50/000000/calculator--v1.png"/>
+</head>
+
+<body>
+<!-- partial:index.partial.html -->
+<div class="mother"> 
+  <div class="item" id="parent_cod_bcra">  
+    <input type="text" id="cod_bcra" maxlength="3" size="3" value="000" onkeypress="return isNumber(event)">
+  </div>
+  <div class="item" id="parent_nro_sucursal">
+    <input type="text" id="nro_sucursal" maxlength="4" size="4" value="0000" onkeypress="return isNumber(event)">
+  </div>
+  <div class="item" id="parent_nro_cuenta">
+    <input type="text" id="nro_cuenta" maxlength="13" size="13" value="0000000000000" onkeypress="return isNumber(event)">
+  </div>
+  <div>
+    <button onclick="generar()"><span class="iconify" data-icon="bi:calculator-fill"></span> Calcular</button>
+  </div>
+  <pre id="cbu"></pre>
+  <button onclick="toClipboard()"><span class="iconify" data-icon="akar-icons:copy"></span> Copiar</button>
+</div>
+
+<!-- partial -->
+  <script>
+    function isNumber(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+          return false;
+        }
+      return true;
+    }
+  </script>
+
+  <script  src="./script.js"></script>
+
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <script>
+    function toClipboard(evt) {
+      var copyText = document.getElementById("cbu");
+      navigator.clipboard.writeText(copyText.rawDigits);
+      alert("Copiado al portapapeles: " + copyText.rawDigits);
+    }
+  </script>
+</body>
+
+</html>
