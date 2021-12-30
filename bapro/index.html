@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora CBU</title>
+  <title>Calculadora CBU - BAPRO</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/png" href="https://img.icons8.com/material-outlined/50/000000/calculator--v1.png"/>
 </head>
@@ -12,11 +12,20 @@
 <!-- partial:index.partial.html -->
 <div class="mother"> 
   <div class="item" id="parent_cod_bcra">  
-    <input type="text" id="cod_bcra" maxlength="3" size="3" value="000" onkeypress="return isNumber(event)">
+    <input type="text" id="cod_bcra" maxlength="3" size="3" value="014" readonly>
   </div>
 
   <div class="item" id="parent_nro_sucursal">
-    <input type="text" id="nro_sucursal" maxlength="4" size="4" value="0000" onkeypress="return isNumber(event)">
+    <select name="sucursal" id="nro_sucursal">
+      <option value="0999">2000 CASA MATRIZ - Av. 7  Nº 726 (La Plata)</option>
+      <option value="0068">5015 CALLE 12 - Calle 12 Nº 1275 (La Plata)</option>
+      <option value="0075">5017 ENSENADA - La Merced 186 (Ensenada)</option>
+      <option value="0079">5020 LOS HORNOS - Av. 137 Nº 1392 (La Plata)</option>
+      <option value="0032">5033 BERISSO - Montevideo 501 esq. 7 (Berisso)</option>
+      <option value="0135">5059 AVENIDA 44 - Av. 44 N° 1631 (La Plata)</option>
+      <option value="0186">5203 AVENIDA 66 - Av. 137 N° 1651 esq. Av. 66 (La Plata)</option>
+      <option value="0190">5207 MERIDIANO V - Calle 17 Nº 1851 esq. 70 (La Plata)</option>
+    </select>
   </div>
 
   <div class="item" id="parent_nro_cuenta">
@@ -29,7 +38,7 @@
 
   <pre id="cbu"></pre>
   <button onclick="toClipboard()"><span class="iconify" data-icon="akar-icons:copy"></span> Copiar</button>
-  <a href="bapro/index.html" >Ir a Calculadora CBU - BAPRO</a>
+  <a href="../index.html" >Volver a Calculadora CBU</a>
 </div>
 
 <!-- partial -->
