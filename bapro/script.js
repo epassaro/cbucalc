@@ -3,6 +3,7 @@
 var cbuSpan = document.getElementById("cbu");
 var cod_bcra = document.getElementById("cod_bcra");
 var nro_sucursal = document.getElementById("nro_sucursal");
+var tipo_cuenta = document.getElementById("tipo_cuenta");
 var nro_cuenta = document.getElementById("nro_cuenta");
 
 var span = a => {
@@ -13,6 +14,7 @@ var calcular = () => {
 
   let B = cod_bcra.value;
   let S = nro_sucursal.value;
+  let T = tipo_cuenta.value;
   let C = nro_cuenta.value;
 
   var verificador1 =
@@ -26,24 +28,23 @@ var calcular = () => {
   verificador1 = (10 - verificador1 % 10) % 10;
 
   var verificador2 =
-      C[0] * 3 +
-      C[1] * 9 +
-      C[2] * 7 +
-      C[3] * 1 +
-      C[4] * 3 +
-      C[5] * 9 +
-      C[6] * 7 +
-      C[7] * 1 +
-      C[8] * 3 +
-      C[9] * 9 +
-      C[10] * 7 +
-      C[11] * 1 +
-      C[12] * 3;
+      T[0] * 3 +
+      T[1] * 9 +
+      C[0] * 7 +
+      C[1] * 1 +
+      C[2] * 3 +
+      C[3] * 9 +
+      C[4] * 7 +
+      C[5] * 1 +
+      C[6] * 3 +
+      C[7] * 9 +
+      C[8] * 7 +
+      C[9] * 1 +
+      C[10] * 3;
   verificador2 = (10 - verificador2 % 10) % 10;
 
   if (isNaN(verificador1) || isNaN(verificador2)) {
-    cbuSpan.innerHTML = span("Número incorrecto de dígitos");
-    cbuSpan.rawDigits = null
+    cbuSpan.innerHTML = span("Número de dígitos insuficiente");
   } else {
     cbuSpan.rawDigits = B + S + verificador1 + C + verificador2;
     cbuSpan.innerHTML = "CBU: " + B + S + span(verificador1) + C + span(verificador2);
@@ -53,5 +54,3 @@ var calcular = () => {
 var generar = () => {
   calcular();
 }
-
-generar();

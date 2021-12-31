@@ -42,8 +42,7 @@ var calcular = () => {
   verificador2 = (10 - verificador2 % 10) % 10;
 
   if (isNaN(verificador1) || isNaN(verificador2)) {
-    cbuSpan.innerHTML = span("Número incorrecto de dígitos");
-    cbuSpan.rawDigits = null
+    cbuSpan.innerHTML = span("Número de dígitos insuficiente");
   } else {
     cbuSpan.rawDigits = B + S + verificador1 + C + verificador2;
     cbuSpan.innerHTML = "CBU: " + B + S + span(verificador1) + C + span(verificador2);
@@ -53,5 +52,3 @@ var calcular = () => {
 var generar = () => {
   calcular();
 }
-
-generar();

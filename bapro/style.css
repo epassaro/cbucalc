@@ -37,7 +37,11 @@ button {
 }
 
 #parent_nro_sucursal:before {
-  content: 'BAPRO Sucursal';
+  content: 'Sucursal BAPRO';
+}
+
+#parent_tipo_cuenta:before {
+  content: 'Tipo';
 }
 
 #parent_nro_cuenta:before {
