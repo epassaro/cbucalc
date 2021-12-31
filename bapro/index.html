@@ -44,11 +44,12 @@
   </div>
 
   <pre id="cbu"></pre>
-  <button onclick="toClipboard()"><span class="iconify" data-icon="akar-icons:copy"></span> Copiar</button>
   <a href="../index.html" style="font-family: sans-serif; font-size: 14px;">Volver a Calculadora CBU</a>
 </div>
 
 <!-- partial -->
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <script  src="./script.js"></script>
   <script>
     function isNumber(evt) {
       evt = (evt) ? evt : window.event;
@@ -59,19 +60,9 @@
       return true;
     }
   </script>
-
-  <script  src="./script.js"></script>
-
-  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-  <script>
-    function toClipboard(evt) {
-      var copyText = document.getElementById("cbu");
-      navigator.clipboard.writeText(copyText.rawDigits);
-      alert("Copiado al portapapeles: " + copyText.rawDigits);
-    }
-  </script>
 </body>
 
+<!-- footer -->
 <div class="footer">
   <p>Originally forked from Matías Dominguez's <a href="https://codepen.io/maat-aeon/pen/eLMeJx">CodePen</a>. Fixed and maintained by <a href="mailto:epassaro15@gmail.com">@epassaro</a>.
     <br><a href="https://github.com/epassaro/cbucalc">Source code</a> released under the MIT License. Powered by <a href="https://pages.github.com/">GitHub Pages</a>.</p>

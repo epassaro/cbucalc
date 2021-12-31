@@ -48,6 +48,20 @@ var calcular = () => {
   } else {
     cbuSpan.rawDigits = B + S + verificador1 + C + verificador2;
     cbuSpan.innerHTML = "CBU: " + B + S + span(verificador1) + C + span(verificador2);
+
+    let btn = document.createElement("button");
+    var objTo = document.getElementById("cbu");
+
+    btn.innerHTML = '<span class="iconify" data-icon="akar-icons:copy"></span> Copiar';
+    btn.type = "submit";
+    btn.name = "formBtn";
+    btn.onclick = function () {
+      var objTo = document.getElementById("cbu");
+      navigator.clipboard.writeText(objTo.rawDigits);
+      alert("Copiado al portapapeles: " + objTo.rawDigits);
+    }
+
+    objTo.appendChild(btn);
   }
 }
 
