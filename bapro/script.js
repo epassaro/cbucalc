@@ -46,7 +46,7 @@ var calcular = () => {
   if (isNaN(verificador1) || isNaN(verificador2)) {
     cbuSpan.innerHTML = span("Número de dígitos insuficiente");
   } else {
-    cbuSpan.rawDigits = B + S + verificador1 + C + verificador2;
+    cbuSpan.rawDigits = B + S + verificador1 + T + C + verificador2;
     cbuSpan.innerHTML = "CBU: " + B + S + span(verificador1) + T + C + span(verificador2);
 
     let btn = document.createElement("button");
